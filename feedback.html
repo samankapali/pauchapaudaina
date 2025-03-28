@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacho Fiesta - Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nacho Fiesta</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Customer Feedback</h2>
+                <p>We value your opinion to help us improve</p>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <h2 class="section-title">Share Your Experience</h2>
+                        <form id="feedbackForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rating">Rating</label>
+                                <select id="rating" required>
+                                    <option value="">Select rating</option>
+                                    <option value="5">5 - Excellent</option>
+                                    <option value="4">4 - Very Good</option>
+                                    <option value="3">3 - Good</option>
+                                    <option value="2">2 - Fair</option>
+                                    <option value="1">1 - Poor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Feedback</label>
+                                <textarea id="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Submit Feedback</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h2 class="section-title">What Our Customers Say</h2>
+                        <div class="testimonials">
+                            <div class="card" style="margin-bottom: 1.5rem;">
+                                <div class="card-content">
+                                    <h3>Amazing Nachos!</h3>
+                                    <p>"The loaded nachos are to die for! I order them at least once a week. The perfect balance of flavors and textures."</p>
+                                    <p>- Sarah J.</p>
+                                    <div class="rating">★★★★★</div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-bottom: 1.5rem;">
+                                <div class="card-content">
+                                    <h3>Authentic Taste</h3>
+                                    <p>"Takes me back to my trip to Mexico. The spices and ingredients taste just like what I had in Guadalajara."</p>
+                                    <p>- Michael T.</p>
+                                    <div class="rating">★★★★☆</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-content">
+                                    <h3>Great Service</h3>
+                                    <p>"Not only is the food delicious, but the staff is always friendly and my orders arrive hot and fresh every time."</p>
+                                    <p>- Emily R.</p>
+                                    <div class="rating">★★★★★</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Nacho Fiesta</h3>
+                    <p>Authentic Mexican Nachos</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nacho Fiesta. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

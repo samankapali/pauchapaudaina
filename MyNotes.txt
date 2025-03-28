@@ -1,0 +1,10 @@
+nachofiesta/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── images/
+    ├── nacho1.jpg (placeholder)
+    ├── nacho2.jpg (placeholder)
+    └── nacho3.jpg (placeholder)
