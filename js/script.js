@@ -1,65 +1,116 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // Mobile menu toggle with Material ripple effect
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('nav ul');
     
     if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener('click', function() {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple-effect');
+            this.appendChild(ripple);
+            
+            // Get click position
+            const rect = this.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            
+            // Position ripple
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+            
+            // Toggle menu
             navMenu.classList.toggle('show');
         });
     }
     
-    // Form submission handlers
-    const contactForm = document.getElementById('contactForm');
-    const feedbackForm = document.getElementById('feedbackForm');
-    const paymentForm = document.getElementById('paymentForm');
+    // Form submissions with Material feedback
+    const forms = document.querySelectorAll('form');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
-        });
-    }
-    
-    if (feedbackForm) {
-        feedbackForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your feedback! We appreciate your input.');
-            feedbackForm.reset();
-        });
-    }
-    
-    if (paymentForm) {
-        paymentForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Payment submitted successfully! Thank you for your order.');
-            paymentForm.reset();
-        });
-    }
-    
-    // Sticky header on scroll
-    const header = document.querySelector('header');
-    if (header) {
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
             
-            if (currentScroll <= 0) {
-                header.classList.remove('scroll-up');
-                return;
+            // Create a temporary feedback element
+            const feedback = document.createElement('div');
+            feedback.classList.add('form-feedback');
+            feedback.textContent = 'Thank you for your submission!';
+            
+            // Style the feedback
+            feedback.style.position = 'fixed';
+            feedback.style.bottom = '20px';
+            feedback.style.left = '50%';
+            feedback.style.transform = 'translateX(-50%)';
+            feedback.style.backgroundColor = '#4CAF50';
+            feedback.style.color = 'white';
+            feedback.style.padding = '16px 24px';
+            feedback.style.borderRadius = '4px';
+            feedback.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            feedback.style.zIndex = '1000';
+            feedback.style.animation = 'slideIn 0.3s ease-out';
+            
+            document.body.appendChild(feedback);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                feedback.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                    feedback.remove();
+                }, 300);
+            }, 3000);
+            
+            // Reset form
+            this.reset();
+        });
+    });
+    
+    // Add ripple effects to buttons
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create ripple
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple-effect');
+            this.appendChild(ripple);
+            
+            // Get click position
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Position ripple
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // Add animation to cards when they come into view
+    const observerOptions = {
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
             }
-            
-            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-                header.classList.remove('scroll-up');
-                header.classList.add('scroll-down');
-            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-                header.classList.remove('scroll-down');
-                header.classList.add('scroll-up');
-            }
-            
-            lastScroll = currentScroll;
         });
-    }
+    }, observerOptions);
+    
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        observer.observe(card);
+    });
 });
