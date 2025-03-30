@@ -11,8 +11,7 @@
     <header>
         <div class="container">
             <a href="index.html" class="header-logo">
-                <!-- Replace with your actual logo file -->
-                <img src="images/logo.png" alt=Pau-Cha-Logo class="logo-img">
+                <img src="images/logo.png" alt="Pau-Cha-Logo" class="logo-img">
                 <h1>Pau छ?</h1>
             </a>
             <nav>
@@ -32,12 +31,6 @@
     </header>
 
     <main>
-        <!-- <section class="hero">
-            <div class="container">
-                <h2>Secure Payment</h2>
-                <p>Complete your order with our safe and easy payment process</p>
-            </div>
-        </section> -->
         <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/pay-banner.jpg'); background-size: cover; background-position: center;">
             <div class="container">
               <h2>Secure Payment</h2>
@@ -47,76 +40,32 @@
 
         <section class="main-section">
             <div class="container">
-                <div class="grid-2">
-                    <div>
-                        <h2 class="section-title">Order Summary</h2>
-                        <div class="card" style="margin-bottom: 2rem;">
-                            <div class="card-content">
-                                <h3>Your Items</h3>
-                                <ul style="list-style: none; margin: 1rem 0;">
-                                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                                        <span>Loaded Nachos</span>
-                                        <span>$12.99</span>
-                                    </li>
-                                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                                        <span>Classic Nachos</span>
-                                        <span>$8.99</span>
-                                    </li>
-                                    <li style="padding: 0.5rem 0; display: flex; justify-content: space-between;">
-                                        <span>Delivery Fee</span>
-                                        <span>$2.99</span>
-                                    </li>
-                                </ul>
-                                <div style="font-weight: bold; font-size: 1.2rem; display: flex; justify-content: space-between; margin-top: 1rem;">
-                                    <span>Total</span>
-                                    <span>$24.97</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <h3>Delivery Address</h3>
-                        <p>123 Main Street<br>
-                        Anytown, AT 12345<br>
-                        (555) 987-6543</p>
+                <h2 class="section-title">Payment Options</h2>
+                <p class="payment-description">Please scan the QR code of your preferred payment method to complete your order.</p>
+                
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <a href="https://esewa.com.np" target="_blank">
+                            <img src="images/esewa-qr.png" alt="eSewa QR Code">
+                        </a>
+                        <p>Pay with eSewa</p>
                     </div>
-                    <div>
-                        <h2 class="section-title">Payment Details</h2>
-                        <form id="paymentForm">
-                            <div class="form-group">
-                                <label for="cardName">Name on Card</label>
-                                <input type="text" id="cardName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cardNumber">Card Number</label>
-                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
-                            </div>
-                            <div class="grid-2" style="gap: 1rem;">
-                                <div class="form-group">
-                                    <label for="expiry">Expiry Date</label>
-                                    <input type="text" id="expiry" placeholder="MM/YY" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cvv">CVV</label>
-                                    <input type="text" id="cvv" placeholder="123" required>
-                                </div>
-                            </div>
-                            <div class="form-group" style="margin-top: 1.5rem;">
-                                <input type="checkbox" id="saveCard">
-                                <label for="saveCard" style="display: inline; margin-left: 0.5rem;">Save card for future payments</label>
-                            </div>
-                            <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Pay $24.97</button>
-                        </form>
-                        
-                        <div style="margin-top: 2rem; text-align: center;">
-                            <p>We accept:</p>
-                            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem;">
-                                <i class="fab fa-cc-visa" style="font-size: 2rem;"></i>
-                                <i class="fab fa-cc-mastercard" style="font-size: 2rem;"></i>
-                                <i class="fab fa-cc-amex" style="font-size: 2rem;"></i>
-                                <i class="fab fa-cc-discover" style="font-size: 2rem;"></i>
-                            </div>
-                        </div>
+                    <div class="payment-option">
+                        <a href="https://khalti.com" target="_blank">
+                            <img src="images/khalti-qr.png" alt="Khalti QR Code">
+                        </a>
+                        <p>Pay with Khalti</p>
                     </div>
+                    <div class="payment-option">
+                        <a href="https://nabilbank.com" target="_blank">
+                            <img src="images/nabil-qr.png" alt="Nabil Bank QR Code">
+                        </a>
+                        <p>Bank Transfer (Nabil)</p>
+                    </div>
+                </div>
+                
+                <div class="payment-instructions">
+                    <p><strong>After payment:</strong> Please send the payment receipt to our WhatsApp at +977-XXXXXXXXXX or email at payment@paucha.com</p>
                 </div>
             </div>
         </section>
